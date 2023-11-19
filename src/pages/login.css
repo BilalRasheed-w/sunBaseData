@@ -16,6 +16,7 @@
 .container h2 {
   text-transform: capitalize;
   font-weight: 500;
+  margin: 1rem 0 ;
 }
 .form {
   display: flex;
@@ -34,7 +35,7 @@
   width: fit-content;
   padding: 9px 17px;
   border-radius: 10px;
-  background-color: rgb(36, 36, 168);
+background-color: rgb(36, 36, 168);
   color: white;
   border: none;
   cursor: pointer;
@@ -59,4 +60,10 @@
 .form .input input {
  
   width: 52%;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

@@ -1,0 +1,53 @@
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  /* border: 1px solid black; */
+}
+.theader{
+    border: 1px solid black;
+    border-bottom: 1px solid blue;
+
+}
+.border{
+    background-color: red;
+}
+.list h2{
+    margin: 1rem 0;
+}
+
+.list table {
+  border: 1px solid rgb(184, 173, 173);
+  width: 65%;
+  /* height: 55vh; */
+  padding: 0 1rem;
+}
+th {
+  text-align: left;
+  font-weight: bold;
+  font-size: large;
+   padding: .5rem 0;
+}
+td {
+  font-size: small;
+}
+.tableRow {
+  padding: 1rem;
+  color: grey;
+}
+
+.tableRow td {
+  padding: 0.3rem 0;
+}
+.icons{
+    cursor: pointer;
+    font-size: medium;
+    padding-left: .3rem;
+}
+.icon:hover{
+   color: red;
+   font-size: large;
+
+}

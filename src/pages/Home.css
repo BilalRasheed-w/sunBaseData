@@ -1,0 +1,50 @@
+.home {
+  display: flex;
+
+  height: 90.3vh;
+  position: relative;
+}
+.left {
+  background-color: rgb(73, 73, 240);
+  flex: 1;
+}
+.right {
+  background-color: white;
+  flex: 1;
+}
+.none {
+  display: none;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+}
+.headings {
+  font-size: 5rem;
+  position: relative;
+
+}
+.heading p:nth-child(1){
+    position: absolute;
+    top: 75px;
+    left: 628px ;
+}
+.heading p:nth-child(2){
+    position: absolute;
+    top: 198px;
+    left: 719px ;
+}
+.heading p:nth-child(3){
+    position: absolute;
+    top: 322px;
+    left: 530px ;
+}
+.headings span:nth-child(1){
+    color: white;
+    
+}
+.headings span:nth-child(2){
+    color: rgb(73, 73, 240);
+}

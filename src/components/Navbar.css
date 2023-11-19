@@ -1,0 +1,43 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(245, 232, 232);
+  padding: 0.8rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  height: 6vh;
+}
+.logo_link {
+  text-decoration: none;
+  color: black;
+}
+
+.main h1 {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav {
+  background-color: rgb(245, 232, 232);
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* padding: 0.8rem; */
+  gap: 25px;
+}
+.nav li {
+  cursor: pointer;
+  border: 1px solid gray;
+  padding: 5px 14px;
+  background-color: rgb(36, 36, 168);
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+}
+.nav li Link {
+  color: white;
+}
+.nav li:hover {
+  text-decoration: underline;
+}

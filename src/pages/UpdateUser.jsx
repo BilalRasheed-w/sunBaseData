@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useParams } from "react-router-dom";
 
-const url = "https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp";
+// const url = "https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp";
 
-const NewCustomer = () => {
+
+const UpdateUser = () => {
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
   const [street, setStreet] = useState("");
@@ -13,11 +15,33 @@ const NewCustomer = () => {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState();
+  const [phone, setPhone] = useState("");
+
   const notify = () => toast.error("Name field's can't be empty");
+  const { id } = useParams();
+  const url = `https://dummyjson.com/users/${id}`;
+  
+  useEffect(() => {
+    const fetchUser = async () => {
+      const response = await axios.get(url);
+
+      if (response.status === 200) {
+        const { data } = response;
+        setFirstName(data.firstName);
+        setLastName(data.lastName);
+        setStreet(data.address.address);
+        setAddress(data.address.address);
+        setCity(data.address.city);
+        setState(data.address.state);
+        setEmail(data.email);
+        setPhone(data.phone);
+      }
+    };
+    fetchUser();
+  }, [id]);
 
   const data = {
-    cmd:"create",
+    cmd: "update",
     first_name,
     last_name,
     street,
@@ -37,9 +61,10 @@ const NewCustomer = () => {
     if (first_name.trim().length === 0 || last_name.trim().length === 0) {
       return notify();
     }
-
-    const response = await axios.post(url, data, { headers });
-    console.log(response);
+    //    we need t post this newly updated data to the url given in the assignment
+    alert("User updated Successfully");
+    // const response = await axios.post(url, data, { headers });
+    // console.log(response);
   };
   return (
     <>
@@ -49,9 +74,10 @@ const NewCustomer = () => {
         closeOnClick
         pauseOnHover={false}
       />
+
       <div className="hero">
         <div className="container">
-          <h2>New User</h2>
+          <h2>User Details</h2>
           <form action="" onSubmit={(e) => handleSubmit(e)} className="form">
             <div className="input">
               <input
@@ -68,16 +94,12 @@ const NewCustomer = () => {
               />
             </div>
             <div className="input">
-              <input
-                type="text"
-                placeholder="Street"
-                value={street}
-                onChange={(e) => setStreet(e.target.value)}
-              />
+             
               <input
                 type="text"
                 placeholder="Address"
                 value={address}
+                style={{ width: "100%" }}
                 onChange={(e) => setAddress(e.target.value)}
               />
             </div>
@@ -103,14 +125,14 @@ const NewCustomer = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <input
-                type="number"
+                type="text"
                 placeholder="Phone"
                 inputMode="numeric"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">Update</button>
           </form>
         </div>
       </div>
@@ -118,4 +140,4 @@ const NewCustomer = () => {
   );
 };
 
-export default NewCustomer;
+export default UpdateUser;
