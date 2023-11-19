@@ -1,0 +1,62 @@
+.hero {
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+.container {
+  border: 1px solid gray;
+  height: fit-content;
+  padding: 0rem 2rem;
+  padding-bottom: 2rem;
+  margin-top: 5rem;
+  border-radius: 15px;
+  width: 25vw;
+}
+.container h2 {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.form input {
+  /* background-color: red; */
+  border-radius: 5px;
+  /* height: 1.4rem; */
+  border: 1px solid gray;
+  padding-left: 10px;
+  padding: 6px 10px;
+}
+.form button {
+  width: fit-content;
+  padding: 9px 17px;
+  border-radius: 10px;
+  background-color: rgb(36, 36, 168);
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0px;
+  align-self: flex-end;
+  font-weight: bold;
+}
+.form button:hover {
+  background-color: rgb(81, 78, 177);
+}
+
+.form .input {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+
+  /* border: 2px solid red; */
+  /* justify-content: center; */
+}
+
+.form .input input {
+ 
+  width: 52%;
+}

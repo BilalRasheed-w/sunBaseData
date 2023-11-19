@@ -1,8 +1,12 @@
+import Login from "./pages/Login";
+import NewCustomer from "./pages/NewCustomer";
 
 const App = () => {
   return (
     <>
-      <h1>hello google</h1>
+      <Login />
+      <NewCustomer />
+      
     </>
   );
 };
